@@ -1,0 +1,25 @@
+using System;
+using System.Diagnostics.Tracing;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var FC = BFC();
+
+            Console.WriteLine(FC());
+            Console.WriteLine(FC());
+            Console.WriteLine(FC());
+            Console.WriteLine(FC());
+        }
+
+        static Func<int> BFC()
+        {
+            int i = 0;
+            return () => i++;
+        }
+
+    }
+}
