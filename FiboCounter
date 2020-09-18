@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Tracing;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            foreach(long x in Fib())
+            {
+                Console.WriteLine(x);
+            }
+
+
+
+        }
+        public static IEnumerable<long> Fib()
+        {
+            long current = 0;
+            long next = 1;
+            while (true)
+            {
+                yield return current;
+                long temp = next;
+                next = current + next;
+                current = temp;
+            }
+        }
+
+
+
+    }
+}
